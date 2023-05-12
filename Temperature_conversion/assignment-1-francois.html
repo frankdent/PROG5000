@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1 by Francois d'Entremont</title>
+        <!-- This will show the title on top in the browser page title -->
+        <link rel="stylesheet" href="assignment-1-francois.css">
+        <!-- This will link the css sheet to this HTML document -->
+    </head>
+    <body>
+        <h1>Temperature unit conversion</h1>
+        <p>This page implements the unit conversion between Celsius (°C) and Fahrenheit (°F).</p>
+        <p>Type a value in either of the input boxes.</p>
+        <div class="container">
+            <label>Celsius:</label>
+            <input type="number" id="celsius" step="0.01">
+        </div>
+        <div class="container">
+            <label>Fahrenheit:</label>
+            <input type="number" id="fahrenheit" step="0.01">
+        </div>
+        <!-- This will create two boxes. In each of the boxes there is a label and input -->
+        <div class="underneath">
+            <div class="formuladiv">Formula</div>
+            <div class="outputspace" id="celsius-output"></div>
+            <div class="formuladiv">Formula</div>
+            <div class="outputspace" id="fahrenheit-output"></div>
+            <!-- The javascript searches for the ids and outputs the respected formulas -->
+        </div>
+        <!-- This will create a large box containing the formulas and output spaces  -->
+    </body>
+    <script>
+        // Get the input elements using their id attribute
+        const inputCelsius = document.getElementById('celsius');
+        const inputFahrenheit = document.getElementById('fahrenheit');
+        
+        // Add an event listener to listen for keyup and invoke
+        // the appropriate function in each case
+        inputCelsius.addEventListener('keyup', toFahrenheit);
+        inputFahrenheit.addEventListener('keyup', toCelsius);
+        
+        /**
+         * Convert from Celsius to Fahrenheit
+         */
+        function toFahrenheit(e) {
+
+            // Get the temperature in Celsius
+            let celsius = parseFloat(inputCelsius.value);
+            
+            // Temperature in fahrenheit
+            inputFahrenheit.value = (celsius * 9 / 5) + 32;
+
+            // Write the output
+            output(celsius, fahrenheit.value);
+
+        }
+
+        /**
+         * Convert from Fahrenheit to Celsius
+         */
+        function toCelsius(e) {
+
+            // Get the temperature in Fahrenheit
+            fahrenheit = parseFloat(inputFahrenheit.value);
+
+            // Temperature in celsius
+            inputCelsius.value = (fahrenheit - 32) * 5 / 9;
+
+            // Write the output
+            output(inputCelsius.value, fahrenheit);
+
+        }
+
+        function output(celsius, fahrenheit) {
+
+            // Output the formula for the conversion
+            let preCelsius = document.getElementById("celsius-output");
+            preCelsius.textContent = "(" + celsius + "°C x 9 / 5) + 32 = " + round(fahrenheit) + "°F";
+
+            // Output the formula for the conversion
+            let preFahrenheit = document.getElementById("fahrenheit-output");
+            preFahrenheit.textContent = "(" + fahrenheit + "°F - 32) x 5 / 9 = " + round(celsius) + "°C";
+        }
+
+        /**
+         * Round a number to 2 decimal places 
+         */
+        function round(number) {
+
+            return Math.round(number * 100) / 100;
+
+        }
+    </script>
+</html>

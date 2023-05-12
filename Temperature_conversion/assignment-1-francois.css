@@ -1,0 +1,52 @@
+/* CSS for assignment 1 by François d'Entremont */
+h1 {
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+/* The header will have a font size of 20px and in bold */
+p {
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size:16px;
+}
+/* Words inside a paragraph element will be have a font size of 16px */
+.formuladiv {
+    background-color:rgb(6, 117, 16); 
+    color: white;
+	width: 5%;
+	float: left;
+	text-align: center;
+	height: 20px;
+    padding: 10px;
+	margin-right: 4px;
+	margin-left:8px;
+ }
+/* The formula box has a green background color and white text and is centered inside the box */
+.container {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size:16px;
+    width: 25%; 
+    margin: 5px;
+	float: left;
+	height: 40px;
+    border: .1vw solid #000000;
+	text-align: center;
+	padding-top: 20px;
+}
+/* This is a box with a border that stores the label and the input boxes */
+.outputspace {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size:16px;
+    width: 19.5%; 
+    margin: 5px;
+	float: left;
+	height: 50px;
+	padding-top: 5px;
+}
+/* The outputspace class creates a box for the formulas that will appear */
+.underneath {
+    width: 95%; 
+	float: left;
+	height: 50px;
+}
+/* This is a box that stores the two formulas and two output spaces so that they are aligned under the two containers */
